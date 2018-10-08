@@ -2,7 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Booking
 
-  attr_reader(:id, :member_id, :timetable_id)
+  attr_reader(:id)
+  attr_accessor(:member_id, :timetable_id)
 
 
   def initialize(options)
@@ -24,9 +25,20 @@ def self.delete_all()
   sql = "DELETE FROM bookings"
   SqlRunner.run(sql)
   end
+
 def self.all()
   sql = "SELECT * FROM bookings"
   result = SqlRunner.run(sql)
   return result.map { |booking| Booking.new(booking) }
 end
+
+def update()
+  sql = "UPDATE bookings
+  SET (member_id, timetable_id) = ($1,$2)
+  WHERE id = $3"
+  values = [@member_id, @timetable_id, @id]
+  SqlRunner.run(sql, values)
+end
+
+
 end #class end
