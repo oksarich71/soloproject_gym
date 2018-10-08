@@ -113,6 +113,7 @@ booking1.save
 booking2.save
 booking3.save
 booking4.save
-Gymclass.find(116)
+# gymclass4.type = "Omnia"
+# gymclass4.update
 binding.pry
 nil

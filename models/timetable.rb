@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 class Timetable
 
   attr_reader(:id, :gymclass_id)
-  attr_accessor(:time, :date, :capacity)
+  attr_accessor(:time, :day, :capacity)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -29,5 +29,14 @@ def self.all()
   result = SqlRunner.run(sql)
   return result.map {|timetable| Timetable.new (timetable)}
 end
+
+def update()
+  sql = "UPDATE timetable
+         SET (gymclass_id, time, day, capacity) = ($1,$2,$3,$4)
+         WHERE id = $5"
+  values = [@gymclass_id, @time, @day, @capacity, @id]
+  SqlRunner.run(sql, values)
+end
+
 
 end #class end

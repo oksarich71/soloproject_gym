@@ -36,12 +36,14 @@ class Gymclass
       return result.map { |gymclass| Gymclass.new (gymclass)}
     end
 
-    def self.find( id )
-    sql = "SELECT * FROM gymclasses
-    WHERE id = $1;"
-    values = [id].to_i
-    results = SqlRunner.run( sql, values )
-    return Gymclass.new( results )
+    def update()
+        sql = "UPDATE gymclasses
+        SET type = $1
+        WHERE id = $2"
+    values = [@type, @id]
+    SqlRunner.run(sql, values)
   end
+  
+
 
 end #class end
