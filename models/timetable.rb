@@ -38,5 +38,18 @@ def update()
   SqlRunner.run(sql, values)
 end
 
+def list_members()
+  sql = "select Members.* from bookings
+        inner join members
+        on member_id = members.id
+        inner join timetable
+        on timetable_id = timetable.id
+        where timetable_id = $1;"
+        values = [@id]
+        members_data = SqlRunner.run(sql, values)
+        result = members_data.map { |member| Member.new( member ) }
+        return result
+  end
 
+  # 
 end #class end

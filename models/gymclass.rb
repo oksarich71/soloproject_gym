@@ -40,10 +40,16 @@ class Gymclass
         sql = "UPDATE gymclasses
         SET type = $1
         WHERE id = $2"
-    values = [@type, @id]
-    SqlRunner.run(sql, values)
-  end
-  
+      values = [@type, @id]
+      SqlRunner.run(sql, values)
+    end
+
+    def self.delete(id)
+      sql = "DELETE FROM gymclasses
+             WHERE id = $1"
+      values = [id]
+      SqlRunner.run(sql, values)
+    end
 
 
 end #class end
