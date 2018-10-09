@@ -1,0 +1,25 @@
+<h1>Timetable</h1>
+
+<table>
+  <tr>
+    <th>Gymclass</th>
+    <th></th>
+    <th>Time</th>
+    <th></th>
+    <th>Day</th>
+    <th></th>
+    <th>Capacity</th>
+  </tr>
+  <% for timetable in @timetable %>
+  <tr>
+    <td><a href="/timetable/<%= timetable.id %>"><%= timetable.gymclass.type %></a></td>
+    <td>|</td>
+    <td><%= timetable.time %></td>
+    <td>|</td>
+    <td><%=timetable.day%></td>
+    <td></td>
+    <td><%=timetable.capacity%></td>
+    <td></td>
+  </tr>
+  <% end %>
+</table>

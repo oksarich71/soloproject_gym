@@ -1,0 +1,18 @@
+<h1>Gymclasses</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+  </tr>
+  <% for gymclass in @gymclasses %>
+  <tr>
+    <td><a href="/gymclasses/<%= gymclass.id %>"><%= gymclass.type %></a></td>
+
+  </tr>
+  <% end %>
+  <li>
+        <a href="/gymclasses/new">Add a New Class</a>
+
+      </li>
+
+</table>

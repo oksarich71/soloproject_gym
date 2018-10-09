@@ -38,6 +38,16 @@ def update()
   SqlRunner.run(sql, values)
 end
 
+def gymclass()
+  sql = "SELECT * FROM gymclasses
+  WHERE id = $1"
+  values = [@gymclass_id]
+  results = SqlRunner.run(sql, values)
+  gymclasses = results.map {|gymclass| Gymclass.new(gymclass)}
+  return gymclasses.first
+end
+
+
 def list_members()
   sql = "select Members.* from bookings
         inner join members
@@ -51,5 +61,5 @@ def list_members()
         return result
   end
 
-  # 
+  #
 end #class end

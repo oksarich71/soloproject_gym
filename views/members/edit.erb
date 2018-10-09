@@ -1,0 +1,13 @@
+
+
+<form method="POST" action="/members/<%= @member.id %>">
+  <label for="name-field">Name</label>
+  <input type="text" name="name" id="name-field" value="<%= @member.name %>"/>
+  <label for="membership-select">Select membership</label>
+  <select name="membership">
+    <option value="Premium">Premium</option>
+   <option value="Regular">Regular</option>
+   <input type="submit" value="Edit a member">
+</select>
+
+</form>

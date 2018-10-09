@@ -1,0 +1,7 @@
+<p>Members</p>
+<p>Name: <%= @member.name() %></p>
+<p>Membership: <%= @member.membership %></p>
+<form action="/members/<%= @member.id %>/delete" method="post">
+<input type="submit" value="delete">
+</form>
+<a href="/members/<%= @member.id %>/edit" >Edit</a>

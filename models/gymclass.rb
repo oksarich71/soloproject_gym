@@ -12,13 +12,13 @@ class Gymclass
 
   def save()
       sql = "INSERT INTO gymclasses
-      (
-        type
-      )
+
+        (type)
+
       VALUES
-      (
-        $1
-      )
+
+        ($1)
+
       RETURNING id"
       values = [@type]
       results = SqlRunner.run(sql, values)
