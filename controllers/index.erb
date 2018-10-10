@@ -1,0 +1,24 @@
+<h1>Members</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Membership type</th>
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><a href="/members/<%= member.id %>"><%= member.name %></a></td>
+    <td>|</td>
+    <td><%= member.membership %></td>
+  </tr>
+  <% end %>
+
+
+  <li>
+        <a href="/members/new">Add a New Member</a>
+
+      </li>
+      
+
+</table>

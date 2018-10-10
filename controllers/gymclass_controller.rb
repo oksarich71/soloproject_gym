@@ -8,7 +8,23 @@ get '/gymclasses' do
   erb ( :"gymclasses/index" )
 end
 
-get '/gymclasses/:id' do
-  @gymclass = Gymclass.find(params['id'].to_i)
-  erb(:"gymclasses/show")
+get('/gymclasses/new') do
+  erb(:"gymclasses/new")
+end
+
+get '/gymclasses/destroy' do
+  @gymclasses = Gymclass.all()
+  erb(:"gymclasses/destroy")
+end
+
+post '/gymclasses' do
+  gymclass = Gymclass.new(params)
+  gymclass.save
+  redirect to("/gymclasses")
+end
+
+post('/gymclasses/:id/delete') do
+  id = params[:id]
+  Gymclass.find(id).delete
+  redirect to ("/gymclasses")
 end

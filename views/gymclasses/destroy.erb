@@ -1,0 +1,13 @@
+<form action="/gymclasses" method="post">
+  <label for="gymclass-select">Select Gymclass</label>
+<br>
+    <% for gymclass in @gymclasses %>
+    <form action="/gymclasses/<%= gymclass.id %>/delete" method="post">
+      <input type="submit" value="delete <%= gymclass.type %>">
+    </form>
+
+    <% end %>
+
+</select>
+
+</form>

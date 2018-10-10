@@ -10,3 +10,10 @@ get '/timetable' do
   @timetable = Timetable.all
   erb ( :"timetable/index" )
 end
+
+get '/timetable/:id' do
+    @timetable = Timetable.find(params[:id].to_i)
+    @members = @timetable.list_members
+    erb( :"timetable/show" )
+  end
+  
