@@ -16,4 +16,7 @@ get '/timetable/:id' do
     @members = @timetable.list_members
     erb( :"timetable/show" )
   end
-  
+
+  get('/timetable/new') do
+    erb(:"timetable/new")
+  end
