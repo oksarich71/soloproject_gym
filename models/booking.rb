@@ -40,6 +40,21 @@ def update()
   SqlRunner.run(sql, values)
 end
 
+def delete()
+  sql = "DELETE bookings
+          WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
+def self.find(id)
+  sql = "SELECT * from bookings
+          where id = $1"
+  values = [id]
+  results = SqlRunner.run(sql, values)
+  return Booking.new(results.first)
+end
+
 
 
 

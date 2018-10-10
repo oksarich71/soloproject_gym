@@ -30,6 +30,8 @@ end
 
 
 
+
+
  def self.delete_all()
    sql = "DELETE FROM timetable"
    SqlRunner.run(sql)

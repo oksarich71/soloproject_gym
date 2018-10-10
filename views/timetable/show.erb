@@ -10,8 +10,12 @@
   </tr>
   <% end %>
   <li>
-        <a href="/timetable/new">Add a Member</a>
+        <a href="/timetable/<%= @timetable.id %>/new_booking">Add a Member</a>
 
       </li>
+
+    <li>
+    <a href="/timetable/<%= @timetable.id %>/delete_booking">Delete a Member</a>
+    </li>
 
 </table>
