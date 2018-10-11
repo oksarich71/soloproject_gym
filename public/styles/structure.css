@@ -3,18 +3,17 @@
     position: absolute;
     top: 110px;
     right: 0;
-    width: 800px;
+    width: 630px;
     height: 100px;
   }
   .image2 {
       position: absolute;
       top: 300px;
       right: 0;
-      width: 600px;
-      height: 200px;
-      border-radius: 8px;
       width: 500px;
-      height: 200px;
+      height: 1000px;
+      border-radius: 8px;
+
     }
   .div1 {
     width: 400px;

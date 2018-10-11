@@ -1,7 +1,7 @@
 <p></p>
-<p>Name: <%= @member.name() %></p>
-<p>Membership: <%= @member.membership %></p>
-<form action="/members/<%= @member.id %>/delete" method="post">
+<div class="table"><p>Name: <%= @member.name() %></p>
+<p>Membership: <%= @member.membership %></p></div>
+<form class="button" action="/members/<%= @member.id %>/delete" method="post">
 <input type="submit" value="delete">
 </form>
-<a href="/members/<%= @member.id %>/edit" >Edit</a>
+<a class="button" href="/members/<%= @member.id %>/edit" >Edit</a>
