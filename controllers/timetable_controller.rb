@@ -13,13 +13,12 @@ end
 
 get('/timetable/:id/delete_booking') do
   @timetable = Timetable.find(params[:id].to_i)
-  @members = Member.all
+  @members = @timetable.list_members
   erb(:"/timetable/destroy")
 end
 
-post('/timetable/:timetable_id') do
-  id = params[:id]
-  Booking.find(id).delete
+post('/timetable/:timetable_id/delete_booking') do
+  Booking.delete_by_ids(params["timetable_id"], params["member_id"])
   redirect to ("/timetable")
 end
 

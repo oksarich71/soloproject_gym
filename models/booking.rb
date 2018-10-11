@@ -41,7 +41,7 @@ def update()
 end
 
 def delete()
-  sql = "DELETE bookings
+  sql = "DELETE FROM bookings
           WHERE id = $1"
   values = [@id]
   SqlRunner.run(sql, values)
@@ -54,6 +54,16 @@ def self.find(id)
   results = SqlRunner.run(sql, values)
   return Booking.new(results.first)
 end
+
+
+def self.delete_by_ids(timetable_id, member_id)
+  sql = "DELETE FROM bookings
+        WHERE timetable_id = $1 AND member_id = $2"
+  values = [timetable_id, member_id]
+  SqlRunner.run(sql, values)
+
+end
+
 
 
 

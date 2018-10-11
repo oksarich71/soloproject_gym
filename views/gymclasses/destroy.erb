@@ -1,5 +1,5 @@
 <form action="/gymclasses" method="post">
-  <label for="gymclass-select">Select Gymclass</label>
+  <label class="button" for="gymclass-select">Select Gymclass</label>
 <br>
     <% for gymclass in @gymclasses %>
     <form action="/gymclasses/<%= gymclass.id %>/delete" method="post">

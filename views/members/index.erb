@@ -1,24 +1,41 @@
-<h1>Members</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Membership type</th>
-  </tr>
-  <% for member in @members %>
-  <tr>
-    <td><a href="/members/<%= member.id %>"><%= member.name %></a></td>
-    <td>|</td>
-    <td><%= member.membership %></td>
-  </tr>
-  <% end %>
+     <h1></h1>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th>Membership type</th>
+      </tr>
+      <% for member in @members %>
+      <tr>
+        <td><a href="/members/<%= member.id %>"><%= member.name %></a></td>
+        <td></td>
+        <td><%= member.membership %></td>
+      </tr>
+      <% end %>
 
 
-  <li>
-        <a href="/members/new">Add a New Member</a>
 
-      </li>
-      
+            <a class="button" href="/members/new">Add a New Member</a>
 
-</table>
+
+
+
+    </table>
+
+
+  </div>
+  <div class="image1"><img src="/images/members.jpg"/>
+
+    </div>
+
+
+
+
+
+  <div class="box_footer"></div>
+</div>
+
+
+
+</body>

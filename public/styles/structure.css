@@ -1,0 +1,27 @@
+
+.image1 {
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 800px;
+    height: 100px;
+  }
+  .image2 {
+      position: absolute;
+      top: 300px;
+      right: 0;
+      width: 600px;
+      height: 200px;
+      border-radius: 8px;
+      width: 500px;
+      height: 200px;
+    }
+  .div1 {
+    width: 400px;
+    height: 300px;
+    border: 1px solid blue;
+    background-color: white;
+    margin-top: 100px;
+    text-indent: inherit;
+
+  }
